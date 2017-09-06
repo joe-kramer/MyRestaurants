@@ -9,20 +9,23 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class RestaurantsActivity extends AppCompatActivity {
-    private TextView mLocationTextView;
+    @Bind(R.id.locationTextView) TextView mLocationTextView;
+    @Bind(R.id.listView) ListView mListView;
+
     private String[] restaurants = new String[] {"Sweet Hereafter", "Cricket", "Hawthorne Fish House", "Viking Soul Food",
             "Red Square", "Horse Brass", "Dick's Kitchen", "Taco Bell", "Me Kha Noodle Bar",
             "La Bonita Taqueria", "Smokehouse Tavern", "Pembiche", "Kay's Bar", "Gnarly Grey", "Slappy Cakes", "Mi Mero Mole" };
-    private ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurants);
+        ButterKnife.bind(this);
 
-        mLocationTextView = (TextView) findViewById(R.id.locationTextView);
-        mListView = (ListView) findViewById(R.id.listView);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, restaurants);
         mListView.setAdapter(adapter);
 
