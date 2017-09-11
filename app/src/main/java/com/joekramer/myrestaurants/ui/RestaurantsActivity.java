@@ -1,15 +1,16 @@
-package com.joekramer.myrestaurants;
+package com.joekramer.myrestaurants.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.joekramer.myrestaurants.R;
+import com.joekramer.myrestaurants.models.Restaurant;
+import com.joekramer.myrestaurants.services.YelpService;
 
 import java.io.IOException;
 import java.util.ArrayList;

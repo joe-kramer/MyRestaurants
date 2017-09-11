@@ -1,4 +1,4 @@
-package com.joekramer.myrestaurants;
+package com.joekramer.myrestaurants.models;
 
 
 import java.util.ArrayList;

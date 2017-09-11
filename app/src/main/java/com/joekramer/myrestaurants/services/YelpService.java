@@ -1,6 +1,9 @@
-package com.joekramer.myrestaurants;
+package com.joekramer.myrestaurants.services;
 
 import android.util.Log;
+
+import com.joekramer.myrestaurants.Constants;
+import com.joekramer.myrestaurants.models.Restaurant;
 
 import org.json.JSONArray;
 import org.json.JSONException;
