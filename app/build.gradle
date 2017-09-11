@@ -31,9 +31,6 @@ android {
         it.buildConfigField 'String', 'YELP_CONSUMER_SECRET', YelpConsumerSecret
         it.buildConfigField 'String', 'YELP_TOKEN', YelpToken
         it.buildConfigField 'String', 'YELP_TOKEN_SECRET', YelpTokenSecret
-        it.buildConfigField 'String', 'YELP_CLIENT_ID', YelpClientID
-        it.buildConfigField 'String', 'YELP_CLIENT_SECRET', YelpClientSecret
-        it.buildConfigField 'String', 'YELP_ACCESS_TOKEN', YelpAccessToken
     }
 }
 
