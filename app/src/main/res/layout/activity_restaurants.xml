@@ -6,18 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.joekramer.myrestaurants.ui.RestaurantsActivity">
 
-    <TextView
-        android:id="@+id/locationTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp"
-        android:text="TextView" />
-
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView">
-    </ListView>
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"/>
+
 </android.widget.RelativeLayout>
