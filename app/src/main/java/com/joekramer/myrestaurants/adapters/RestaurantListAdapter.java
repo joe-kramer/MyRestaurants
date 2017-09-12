@@ -51,11 +51,14 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
     }
 
     public class RestaurantViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private static final int MAX_WIDTH = 200;
+        private static final int MAX_HEIGHT = 200;
         @Bind(R.id.restaurantImageView) ImageView mRestaurantImageView;
         @Bind(R.id.restaurantNameTextView) TextView mNameTextView;
         @Bind(R.id.categoryTextView) TextView mCategoryTextView;
         @Bind(R.id.ratingTextView) TextView mRatingTextView;
 
+        private ArrayList<Restaurant> mRestaurants = new ArrayList<>();
         private Context mContext;
 
         public RestaurantViewHolder(View itemView) {
@@ -78,7 +81,11 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
             mNameTextView.setText(restaurant.getName());
             mCategoryTextView.setText(restaurant.getCategories().get(0));
             mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
-            Picasso.with(mContext).load(restaurant.getImageUrl()).into(mRestaurantImageView);
+            Picasso.with(mContext)
+                    .load(restaurant.getImageUrl())
+                    .resize(MAX_WIDTH, MAX_HEIGHT)
+                    .centerCrop()
+                    .into(mRestaurantImageView);
         }
     }
 }
