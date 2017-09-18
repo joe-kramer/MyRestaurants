@@ -16,19 +16,19 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 public class MainActivityIntrumentationTest {
 
-    @Rule
-    public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<>(MainActivity.class);
-
-    @Test
-    public void validateEditText() {
-        onView(withId(R.id.locationEditText)).perform(typeText("Portland")).check(matches(withText("Portland")));
-    }
-
-    @Test
-    public void locationIsSentToRestaurantActivity() {
-        String location = "Portland";
-        onView(withId(R.id.locationEditText)).perform(typeText(location));
-        onView(withId(R.id.findRestaurantsButton)).perform(click());
-        onView(withId(R.id.locationTextView)).check(matches(withText("Here are all the restaurants near: " + location)));
-    }
+//    @Rule
+//    public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<>(MainActivity.class);
+//
+//    @Test
+//    public void validateEditText() {
+//        onView(withId(R.id.locationEditText)).perform(typeText("Portland")).check(matches(withText("Portland")));
+//    }
+//
+//    @Test
+//    public void locationIsSentToRestaurantActivity() {
+//        String location = "Portland";
+//        onView(withId(R.id.locationEditText)).perform(typeText(location));
+//        onView(withId(R.id.findRestaurantsButton)).perform(click());
+//        onView(withId(R.id.locationTextView)).check(matches(withText("Here are all the restaurants near: " + location)));
+//    }
 }
