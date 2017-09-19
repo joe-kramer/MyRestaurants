@@ -1,11 +1,15 @@
 package com.joekramer.myrestaurants.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
+import com.joekramer.myrestaurants.Constants;
 import com.joekramer.myrestaurants.R;
 import com.joekramer.myrestaurants.adapters.RestaurantListAdapter;
 import com.joekramer.myrestaurants.models.Restaurant;
@@ -27,6 +31,11 @@ public class RestaurantListActivity extends AppCompatActivity {
     private RestaurantListAdapter mAdapter;
     public ArrayList<Restaurant> mRestaurants = new ArrayList<>();
 
+    //shared preferences
+    private SharedPreferences mSharedPreferences;
+    private String mRecentAddress;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +45,11 @@ public class RestaurantListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
         getRestaurants(location);
+
+        //shared preferences
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+        Log.d("Shared Pref Location", mRecentAddress);
     }
 
     private void getRestaurants(String location) {
